@@ -1,0 +1,21 @@
+# Ignorar archivos generados por Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Ignorar el entorno virtual
+venv/
+env/
+.env/
+
+# Ignorar archivos del sistema
+.DS_Store
+Thumbs.db
+
+# Ignorar archivos de configuración IDE
+.vscode/
+.idea/
+
+# No ignorar la carpeta de imágenes pero sí su contenido
+static/img/*
+!static/img/.gitkeep
