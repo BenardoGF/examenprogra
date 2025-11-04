@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block title %}Nueva Película{% endblock %}
+
+{% block content %}
+<h1 class="mb-4">Agregar Nueva Película</h1>
+
+<div class="card">
+    <div class="card-body">
+        <form method="POST" enctype="multipart/form-data">
+            <div class="mb-3">
+                <label for="titulo" class="form-label">Título</label>
+                <input type="text" class="form-control" id="titulo" name="titulo" required>
+            </div>
+            
+            <div class="mb-3">
+                <label for="genero" class="form-label">Género</label>
+                <select class="form-control" id="genero" name="genero" required>
+                    <option value="Acción">Acción</option>
+                    <option value="Aventura">Aventura</option>
+                    <option value="Comedia">Comedia</option>
+                    <option value="Drama">Drama</option>
+                    <option value="Ciencia Ficción">Ciencia Ficción</option>
+                    <option value="Terror">Terror</option>
+                    <option value="Romance">Romance</option>
+                </select>
+            </div>
+            
+            <div class="mb-3">
+                <label for="duracion" class="form-label">Duración</label>
+                <input type="text" class="form-control" id="duracion" name="duracion" 
+                       placeholder="Ej: 2h 30min" required>
+            </div>
+            
+            <div class="mb-3">
+                <label for="imagen" class="form-label">Imagen de la Película</label>
+                <input type="file" class="form-control" id="imagen" name="imagen" 
+                       accept="image/*" required>
+            </div>
+            
+            <button type="submit" class="btn btn-primary">
+                <i class="fas fa-save"></i> Guardar Película
+            </button>
+            <a href="{{ url_for('index') }}" class="btn btn-secondary">
+                <i class="fas fa-arrow-left"></i> Volver
+            </a>
+        </form>
+    </div>
+</div>
+{% endblock %}

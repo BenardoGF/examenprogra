@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block title %}CinePOO - Inicio{% endblock %}
+
+{% block content %}
+<h1 class="mb-4">Cartelera de Películas</h1>
+
+<div class="row">
+    {% for pelicula in peliculas %}
+    <div class="col-md-4 mb-4">
+        <div class="card h-100">
+            <img src="{{ url_for('static', filename='img/' + pelicula.imagen) }}" 
+                 class="card-img-top" alt="{{ pelicula.titulo }}"
+                 style="height: 300px; object-fit: cover;">
+            <div class="card-body">
+                <h5 class="card-title">{{ pelicula.titulo }}</h5>
+                <p class="card-text">
+                    <strong>Género:</strong> {{ pelicula.genero }}<br>
+                    <strong>Duración:</strong> {{ pelicula.duracion }}
+                </p>
+            </div>
+            <div class="card-footer">
+                <a href="{{ url_for('editar_pelicula', id=pelicula.id) }}" 
+                   class="btn btn-warning">
+                    <i class="fas fa-edit"></i> Editar
+                </a>
+                <a href="{{ url_for('eliminar_pelicula', id=pelicula.id) }}" 
+                   class="btn btn-danger"
+                   onclick="return confirm('¿Estás seguro de eliminar esta película?')">
+                    <i class="fas fa-trash"></i> Eliminar
+                </a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

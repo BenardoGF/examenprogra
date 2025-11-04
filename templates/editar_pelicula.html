@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block title %}Editar Película{% endblock %}
+
+{% block content %}
+<h1 class="mb-4">Editar Película</h1>
+
+<div class="card">
+    <div class="card-body">
+        <form method="POST" enctype="multipart/form-data">
+            <div class="mb-3">
+                <label for="titulo" class="form-label">Título</label>
+                <input type="text" class="form-control" id="titulo" name="titulo" 
+                       value="{{ pelicula.titulo }}" required>
+            </div>
+            
+            <div class="mb-3">
+                <label for="genero" class="form-label">Género</label>
+                <select class="form-control" id="genero" name="genero" required>
+                    <option value="Acción" {% if pelicula.genero == 'Acción' %}selected{% endif %}>Acción</option>
+                    <option value="Aventura" {% if pelicula.genero == 'Aventura' %}selected{% endif %}>Aventura</option>
+                    <option value="Comedia" {% if pelicula.genero == 'Comedia' %}selected{% endif %}>Comedia</option>
+                    <option value="Drama" {% if pelicula.genero == 'Drama' %}selected{% endif %}>Drama</option>
+                    <option value="Ciencia Ficción" {% if pelicula.genero == 'Ciencia Ficción' %}selected{% endif %}>Ciencia Ficción</option>
+                    <option value="Terror" {% if pelicula.genero == 'Terror' %}selected{% endif %}>Terror</option>
+                    <option value="Romance" {% if pelicula.genero == 'Romance' %}selected{% endif %}>Romance</option>
+                </select>
+            </div>
+            
+            <div class="mb-3">
+                <label for="duracion" class="form-label">Duración</label>
+                <input type="text" class="form-control" id="duracion" name="duracion" 
+                       value="{{ pelicula.duracion }}" required>
+            </div>
+            
+            <div class="mb-3">
+                <label for="imagen" class="form-label">Imagen Actual</label>
+                <img src="{{ url_for('static', filename='img/' + pelicula.imagen) }}" 
+                     alt="{{ pelicula.titulo }}" class="img-thumbnail" style="max-height: 200px"><br>
+                <label for="imagen" class="form-label mt-2">Cambiar Imagen (opcional)</label>
+                <input type="file" class="form-control" id="imagen" name="imagen" accept="image/*">
+            </div>
+            
+            <button type="submit" class="btn btn-primary">
+                <i class="fas fa-save"></i> Guardar Cambios
+            </button>
+            <a href="{{ url_for('index') }}" class="btn btn-secondary">
+                <i class="fas fa-arrow-left"></i> Volver
+            </a>
+        </form>
+    </div>
+</div>
+{% endblock %}
