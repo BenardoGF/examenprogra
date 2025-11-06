@@ -17,7 +17,12 @@ ultimo_id = 3
 
 @app.route('/')
 def index():
-    return render_template('index.html', peliculas=peliculas)
+    print("Accediendo a la ruta /")  # Mensaje de depuración
+    try:
+        return render_template('index.html', peliculas=peliculas)
+    except Exception as e:
+        print(f"Error encontrado: {str(e)}")  # Mensaje de depuración
+        return f"Error en CinePOO: {str(e)}"
 
 @app.route('/pelicula/nueva', methods=['GET', 'POST'])
 def nueva_pelicula():
