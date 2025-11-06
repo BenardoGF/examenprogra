@@ -9,9 +9,6 @@
     {% for pelicula in peliculas %}
     <div class="col-md-4 mb-4">
         <div class="card h-100">
-            <img src="{{ url_for('static', filename='img/' + pelicula.imagen) }}" 
-                 class="card-img-top" alt="{{ pelicula.titulo }}"
-                 style="height: 300px; object-fit: cover;">
             <div class="card-body">
                 <h5 class="card-title">{{ pelicula.titulo }}</h5>
                 <p class="card-text">

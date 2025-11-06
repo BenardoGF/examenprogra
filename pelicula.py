@@ -1,18 +1,16 @@
 class Pelicula:
-    def __init__(self, id, titulo, genero, duracion, imagen):
+    def __init__(self, id, titulo, genero, duracion):
         self.id = id
         self.titulo = titulo
         self.genero = genero
         self.duracion = duracion
-        self.imagen = imagen
 
     def to_dict(self):
         return {
             'id': self.id,
             'titulo': self.titulo,
             'genero': self.genero,
-            'duracion': self.duracion,
-            'imagen': self.imagen
+            'duracion': self.duracion
         }
 
     @staticmethod
@@ -21,6 +19,5 @@ class Pelicula:
             data['id'],
             data['titulo'],
             data['genero'],
-            data['duracion'],
-            data['imagen']
+            data['duracion']
         )

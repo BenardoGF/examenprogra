@@ -33,13 +33,7 @@
                        value="{{ pelicula.duracion }}" required>
             </div>
             
-            <div class="mb-3">
-                <label for="imagen" class="form-label">Imagen Actual</label>
-                <img src="{{ url_for('static', filename='img/' + pelicula.imagen) }}" 
-                     alt="{{ pelicula.titulo }}" class="img-thumbnail" style="max-height: 200px"><br>
-                <label for="imagen" class="form-label mt-2">Cambiar Imagen (opcional)</label>
-                <input type="file" class="form-control" id="imagen" name="imagen" accept="image/*">
-            </div>
+
             
             <button type="submit" class="btn btn-primary">
                 <i class="fas fa-save"></i> Guardar Cambios
