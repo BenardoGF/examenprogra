@@ -7,9 +7,9 @@ app.secret_key = 'clave_secreta_12345'  # Necesario para usar flash messages
 
 # Lista para almacenar las películas (simulando una base de datos)
 peliculas = [
-    Pelicula(1, "The Avengers", "Acción", "2h 23min", "avengers.jpg"),
-    Pelicula(2, "Inception", "Ciencia Ficción", "2h 28min", "inception.jpg"),
-    Pelicula(3, "The Dark Knight", "Acción", "2h 32min", "dark_knight.jpg")
+    Pelicula(1, "The Avengers", "Acción", "2h 23min", "default.jpg"),
+    Pelicula(2, "Inception", "Ciencia Ficción", "2h 28min", "default.jpg"),
+    Pelicula(3, "The Dark Knight", "Acción", "2h 32min", "default.jpg")
 ]
 
 # Contador para los IDs de las películas
