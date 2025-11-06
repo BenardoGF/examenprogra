@@ -3,6 +3,8 @@ Autores:
 Garcia Fragoso Bernardo
 Cisneros López Edwin
 Ramos Gómez Daniel Ricardo
+
+
 Este es un sistema simple de gestión de películas desarrollado con Flask y programación orientada a objetos.
 
 ## Características
