@@ -1,7 +1,10 @@
 # CinePOO - Sistema de Gestión de Películas
 Autores:
+
 Garcia Fragoso Bernardo
+
 Cisneros López Edwin
+
 Ramos Gómez Daniel Ricardo
 
 
